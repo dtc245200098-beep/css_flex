@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành CSS flex-grow</title>
+    <style>
+        /* Khung chứa flex */
+        .container {
+            display: flex;
+            width: 100%; /* Đảm bảo khung có khoảng trống dư thừa để flex-grow phát huy tác dụng */
+            background-color: #f1f1f1;
+            padding: 10px;
+            border: 2px solid #333;
+            box-sizing: border-box;
+        }
+
+        /* Định dạng chung cho 5 item */
+        .item {
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 15px;
+            margin: 5px;
+            text-align: center;
+            font-weight: bold;
+            flex-grow: 0; /* Giá trị mặc định: không tăng kích thước */
+        }
+
+        /* Div thứ 2 được áp dụng flex-grow */
+        .item-2 {
+            background-color: #ff5722; /* Phân biệt bằng màu cam */
+            color: white;
+            flex-grow: 1; /* Chiếm toàn bộ khoảng trống còn thừa trong container */
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Ví dụ: Áp dụng `flex-grow` vào Div thứ 2</h3>
+    <div class="container">
+        <div class="item">Div 1</div>
+        <div class="item item-2">Div 2 (flex-grow: 1)</div>
+        <div class="item">Div 3</div>
+        <div class="item">Div 4</div>
+        <div class="item">Div 5</div>
+    </div>
+
+</body>
+</html>
