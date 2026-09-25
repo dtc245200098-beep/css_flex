@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành CSS flex-flow</title>
+    <style>
+        .container {
+            display: flex;
+            width: 320px; /* Khung cố định để kiểm tra tính năng wrap */
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #333;
+        }
+
+        .item {
+            background-color: #9c27b0;
+            color: white;
+            width: 100px;
+            height: 40px;
+            margin: 5px;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+        }
+
+        /* 1. Mặc định: Hàng ngang + Không xuống dòng */
+        .flow-row-nowrap {
+            flex-flow: row nowrap;
+        }
+
+        /* 2. Đảo ngược hàng + Cho phép xuống dòng */
+        .flow-row-reverse-wrap {
+            flex-flow: row-reverse wrap;
+        }
+
+        /* 3. Sắp xếp cột + Cho phép xuống dòng */
+        .flow-column-wrap {
+            height: 150px; /* Đặt chiều cao để kiểm tra xuống cột */
+            flex-flow: column wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>1. `flex-flow: row nowrap;` (Hàng ngang, co ép trên 1 dòng)</h3>
+    <div class="container flow-row-nowrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+    <h3>2. `flex-flow: row-reverse wrap;` (Hàng ngược, tự xuống dòng)</h3>
+    <div class="container flow-row-reverse-wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+    <h3>3. `flex-flow: column wrap;` (Cột đứng, xuống cột khi hết chiều cao)</h3>
+    <div class="container flow-column-wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+</body>
+</html>
