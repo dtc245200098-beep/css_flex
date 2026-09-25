@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành CSS flex-wrap</title>
+    <style>
+        /* Khung chứa chung */
+        .container {
+            display: flex;
+            width: 300px; /* Cố định chiều rộng để các item bắt buộc phải xuống dòng */
+            background-color: #f1f1f1;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px solid #333;
+        }
+
+        /* Các ô bên trong */
+        .item {
+            background-color: #4CAF50;
+            color: white;
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+        }
+
+        /* 1. Giá trị wrap */
+        .wrap {
+            flex-wrap: wrap;
+        }
+
+        /* 2. Giá trị nowrap (mặc định) */
+        .nowrap {
+            flex-wrap: nowrap;
+        }
+
+        /* 3. Giá trị wrap-reverse */
+        .wrap-reverse {
+            flex-wrap: wrap-reverse;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>1. Ví dụ `flex-wrap: wrap;` (Tự động xuống dòng khi thiếu chỗ)</h3>
+    <div class="container wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+    <h3>2. Ví dụ `flex-wrap: nowrap;` (Co ép trên 1 dòng, không xuống dòng)</h3>
+    <div class="container nowrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+    <h3>3. Ví dụ `flex-wrap: wrap-reverse;` (Xuống dòng nhưng đảo ngược thứ tự dòng)</h3>
+    <div class="container wrap-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+</body>
+</html>
