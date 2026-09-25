@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành CSS flex-basis</title>
+    <style>
+        .container {
+            display: flex;
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #333;
+        }
+
+        .item {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Ví dụ 1: flex-basis dạng độ dài cụ thể (number) */
+        .basis-px {
+            flex-basis: 200px; /* Cố định kích thước ban đầu là 200px */
+        }
+
+        .basis-percent {
+            flex-basis: 50%; /* Chiếm 50% chiều rộng khung chứa */
+        }
+
+        /* Ví dụ 2: flex-basis: auto (Kích thước dựa theo nội dung hoặc width/height) */
+        .basis-auto {
+            flex-basis: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Ví dụ 1: `flex-basis` dùng đơn vị độ dài (px, %)</h3>
+    <div class="container">
+        <div class="item basis-px">flex-basis: 200px</div>
+        <div class="item basis-percent">flex-basis: 50%</div>
+        <div class="item">Bình thường</div>
+    </div>
+
+    <h3>Ví dụ 2: `flex-basis: auto;` (Mặc định - co giãn theo nội dung)</h3>
+    <div class="container">
+        <div class="item basis-auto">Ngắn</div>
+        <div class="item basis-auto">Nội dung dài hơn sẽ chiếm nhiều diện tích hơn</div>
+    </div>
+
+</body>
+</html>
