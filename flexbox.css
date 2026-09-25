@@ -1,0 +1,66 @@
+/* Reset CSS cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Bố cục tổng thể theo cột */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sử dụng min-height để không bị tràn màn hình khi nội dung dài */
+}
+
+/* Header & Footer */
+.header, .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Thanh điều hướng */
+.nav {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Khu vực nội dung chính + Sidebar xếp hàng ngang trên Desktop */
+.main-container {
+    display: flex;
+    flex: 1; /* Tự động co giãn lấp đầy khoảng trống giữa Header và Footer */
+}
+
+/* Tỷ lệ 3:1 giữa Content và Sidebar */
+.content {
+    flex: 3;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+}
+
+/* Xử lý Responsive cho màn hình di động (Dưới 768px) */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Chuyển Sidebar xuống dưới Content */
+    }
+
+    .sidebar {
+        border-left: none;
+        border-top: 1px solid #ddd;
+    }
+}
